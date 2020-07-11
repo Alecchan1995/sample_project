@@ -272,7 +272,7 @@ print("sold = %.2f" %(totalsold/len(redata)))
 print("stars = %.2f" % (totalstar/len(redata)))
 print(position)
 print(len(position))
-print(redata)
+
 data = pds.DataFrame(redata)
 data['Average_price'] =  totalmoney/len(redata)
 data['Average_cp'] =  totalcp/len(redata)
@@ -281,11 +281,9 @@ data['Average_sold'] =  totalsold/len(redata)
 print(data)
 data.to_excel("hobedata.xlsx")
 x = [i  for i in range(len(position))]
-print(x)
 y = [position[i] for i in position]
 soldline = []
 pos = [i for i in position]
-print(y)
 plt.subplot(1,2,1)
 plt.plot(x, y,color='red', linewidth=5.0, linestyle='--')
 plt.xlabel('Position')
